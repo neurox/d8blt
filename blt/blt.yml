@@ -10,20 +10,21 @@
 # will not modify `drush.default_alias`, even though `drush.default_alias` is
 # set to `drush.aliases.local` by default.
 project:
-  machine_name: d9-blt
+  machine_name: d8-blt
   # Used for enforcing correct git commit msg syntax.
-  prefix: BLT
-  human_name: 'BLTed 10'
+  prefix: D8BLT
+  human_name: 'Drupal 8 with BLT'
   profile:
     name: lightning
   # This will be used as the local uri for all developers.
   local:
-    protocol: http
-    hostname: 'local.${project.machine_name}.com'
+    protocol: https
+    hostname: '${project.machine_name}.test'
 # Configuration settings for new git repository.
 git:
-  default_branch: master
-  remotes: {  }
+  default_branch: develop
+  remotes:
+    cloud: 'git@github.com:neurox/d9blt.git'
 deploy:
   # When manually deploying a tag, also tag the source repository.
   tag_source: true
